@@ -7,9 +7,12 @@ import collections
 
 # if set, export binaries to the sketch folder
 BUILD_BINARIES = False
+BUILD_BINARIES_PATH = ""
 if "--export-binaries" in sys.argv:
     BUILD_BINARIES = True
     sys.argv.remove("--export-binaries")
+    print(sys.argv[1])
+    print(sys.argv[0])
 
 # optional wall option cause build failed if has warnings
 BUILD_WALL = False
@@ -185,7 +188,7 @@ print()
 # link test library folder to the arduino libraries folder
 if not IS_LEARNING_SYS:
     try:
-        os.symlink(BUILD_DIR, os.environ['HOME']+'/Arduino/libraries/Adafruit_Test_Library')
+        os.symlink(BUILD_DIR, os.environ['HOME']+'/Documents/Arduino/libraries/Adafruit_Test_Library')
     except FileExistsError:
         pass
 
@@ -257,7 +260,7 @@ def test_examples_in_folder(folderpath):
         cmd = ['arduino-cli', 'compile', '--warnings', 'all', '--fqbn', fqbn, examplepath]
         
         if BUILD_BINARIES:
-            cmd = ['arduino-cli', 'compile', "--export-binaries", '--warnings', 'all', '--fqbn', fqbn, examplepath]
+            cmd = ['arduino-cli', 'compile', "--export-binaries", "--build-path", BUILD_BINARIES_PATH, '--warnings', 'all', '--fqbn', fqbn, examplepath]
 
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
                                 stderr=subprocess.PIPE)
