@@ -10,9 +10,10 @@ BUILD_BINARIES = False
 BUILD_BINARIES_PATH = ""
 if "--export-binaries" in sys.argv:
     BUILD_BINARIES = True
+    print('ARG1: ', sys.argv[1])
+    print('ARG2: ', sys.argv[0])
     sys.argv.remove("--export-binaries")
-    print(sys.argv[1])
-    print(sys.argv[0])
+
 
 # optional wall option cause build failed if has warnings
 BUILD_WALL = False
