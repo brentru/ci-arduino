@@ -10,9 +10,8 @@ BUILD_BINARIES = False
 BUILD_BINARIES_PATH = ""
 if "--export-binaries" in sys.argv:
     BUILD_BINARIES = True
-    print('ARG1: ', sys.argv[0])
-    print('ARG2: ', sys.argv[1])
-    print('ARG2: ', sys.argv[2])
+    print('Exporting binaries at: ', sys.argv[3])
+    BUILD_BINARIES_PATH = sys.argv[3]
     sys.argv.remove("--export-binaries")
 
 
