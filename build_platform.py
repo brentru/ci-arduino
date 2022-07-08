@@ -210,10 +210,16 @@ def manually_install_esp32_bsp(repo_info):
     print("Cloned repository!")
 
     # Checkout prv. release (hardcoded for now)
-    cmd = "git fetch --all --tags && git checkout tags/2.0.3"
+    print("Checking out 2.0.3 tag...")
+    
+    cmd = "cd /home/runner/Arduino/hardware/espressif/esp32/ && git fetch --all --tags && git checkout tags/2.0.3"
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    r = proc.wait(timeout=1000)
+    out = proc.stdout.read()
+    err = proc.stderr.read()
 
     print("Installing ESP32 Arduino BSP...")
-    cmd = "cd /home/runner/Arduino/hardware/espressif/esp32/tools && python3 get.py"
+    cmd = "cd tools/ && python3 get.py"
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     r = proc.wait(timeout=1000)
     out = proc.stdout.read()
