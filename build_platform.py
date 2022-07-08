@@ -217,6 +217,9 @@ def manually_install_esp32_bsp(repo_info):
     r = proc.wait(timeout=1000)
     out = proc.stdout.read()
     err = proc.stderr.read()
+    if r != 0:
+        print(out)
+        print(err)
 
     print("Installing ESP32 Arduino BSP...")
     cmd = "cd /home/runner/Arduino/hardware/espressif/esp32/tools/ && python3 get.py"
