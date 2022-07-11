@@ -71,7 +71,7 @@ ALL_PLATFORMS={
     "qtpy_esp32s2" : ["esp32:esp32:adafruit_qtpy_esp32s2", "0xbfdd4eee", None],
     "feather_esp32s2" : ["esp32:esp32:adafruit_feather_esp32s2", "0xbfdd4eee", None],
     "feather_esp32s2_tft" : ["esp32:esp32:adafruit_feather_esp32s2_tft", "0xbfdd4eee", None],
-    "feather_esp32s3" : ["esp32:esp32:adafruit_feather_esp32s3_nopsram", "0xc47e5767", None],
+    "feather_esp32s3" : ["esp32:esp32:adafruit_feather_esp32s3_nopsram", "0xc47e5767", "lbernstone/qspi%3D>qio"],
     "feather_esp32s3_4mbflash_2mbpsram" : ["espressif:esp32:adafruit_feather_esp32s3", "0xc47e5767", "brentru/master"],
     "feather_esp32s3_tft" : ["esp32:esp32:adafruit_feather_esp32s3_tft", "0xc47e5767", None],
     "qtpy_esp32s3" : ["esp32:esp32:adafruit_qtpy_esp32s3_nopsram", "0xc47e5767", None],
@@ -208,17 +208,6 @@ def manually_install_esp32_bsp(repo_info):
         exit(-1)
     print(out)
     print("Cloned repository!")
-
-    # Checkout prv. release (hardcoded for now)
-    print("Checking out 2.0.3 tag...")
-    
-    cmd = "cd /home/runner/Arduino/hardware/espressif/esp32/ && git fetch --all --tags && git checkout tags/2.0.3"
-    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-    r = proc.wait(timeout=1000)
-    out = proc.stdout.read()
-    err = proc.stderr.read()
-    print(out)
-    print(err)
 
     print("Installing ESP32 Arduino BSP...")
     cmd = "cd /home/runner/Arduino/hardware/espressif/esp32/tools/ && python3 get.py"
