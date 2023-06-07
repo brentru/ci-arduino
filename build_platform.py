@@ -147,8 +147,16 @@ ALL_PLATFORMS={
     "rpi_pico_w" : ["rp2040:rp2040:rpipicow:flash=2097152_131072,freq=133,dbgport=Disabled,dbglvl=None,usbstack=tinyusb", "0xe48bff56", None],
     "feather_rp2040" : ["rp2040:rp2040:adafruit_feather:freq=125,flash=8388608_0", "0xe48bff56", None],
     "feather_rp2040_tinyusb" : ["rp2040:rp2040:adafruit_feather:flash=8388608_0,freq=125,dbgport=Disabled,dbglvl=None,usbstack=tinyusb", "0xe48bff56", None],
+    "feather_rp2040_rfm" : ["rp2040:rp2040:adafruit_feather_rfm:freq=125,flash=8388608_0", "0xe48bff56", None],
+    "feather_rp2040_rfm_tinyusb" : ["rp2040:rp2040:adafruit_feather_rfm:flash=8388608_0,freq=125,dbgport=Disabled,dbglvl=None,usbstack=tinyusb", "0xe48bff56", None],
+    "feather_rp2040_dvi" : ["rp2040:rp2040:adafruit_feather_dvi:freq=125,flash=8388608_0", "0xe48bff56", None],
+    "feather_rp2040_dvi_tinyusb" : ["rp2040:rp2040:adafruit_feather_dvi:flash=8388608_0,freq=125,dbgport=Disabled,dbglvl=None,usbstack=tinyusb", "0xe48bff56", None],
+    "feather_rp2040_usbhost_tinyusb" : ["rp2040:rp2040:adafruit_feather_usb_host:flash=8388608_0,freq=120,dbgport=Disabled,dbglvl=None,usbstack=tinyusb", "0xe48bff56", None],
     "qt2040_trinkey" : ["rp2040:rp2040:adafruit_trinkeyrp2040qt:freq=125,flash=8388608_0", "0xe48bff56", None],
     "qt2040_trinkey_tinyusb" : ["rp2040:rp2040:adafruit_trinkeyrp2040qt:flash=8388608_0,freq=125,dbgport=Disabled,dbglvl=None,usbstack=tinyusb", "0xe48bff56", None],
+    "qt_py_rp2040": ["rp2040:rp2040:adafruit_qtpy:freq=125,flash=8388608_0", "0xe48bff56", None],
+    "qt_py_rp2040_tinyusb": ["rp2040:rp2040:adafruit_qtpy:flash=8388608_0,freq=125,dbgport=Disabled,dbglvl=None,usbstack=tinyusb", "0xe48bff56", None],
+
     # Attiny8xy, 16xy, 32xy (SpenceKonde)
     "attiny3217" : ["megaTinyCore:megaavr:atxy7:chip=3217", None, None],
     "attiny3216" : ["megaTinyCore:megaavr:atxy6:chip=3216", None, None],
