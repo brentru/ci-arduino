@@ -219,8 +219,8 @@ def install_library_deps():
 
     # Delete the existing library if we somehow downloaded
     # due to dependencies
-    if our_name:
-        run_or_die("arduino-cli lib uninstall \""+our_name+"\"", "Could not uninstall")
+    #if our_name:
+    #    run_or_die("arduino-cli lib uninstall \""+our_name+"\"", "Could not uninstall")
 
     print("Libraries installed: ", glob.glob(os.environ['HOME']+'/Arduino/libraries/*'))
 
