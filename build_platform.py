@@ -164,6 +164,7 @@ def run_or_die(cmd, error):
     print(cmd)
     attempt = 0
     while attempt < 3:
+        print('attempting to run cmd: ', cmd)
         if os.system(cmd) == 0:
             return
         attempt += 1
