@@ -139,20 +139,22 @@ def install_platform(fqbn, full_platform_name=None):
         print("Moving drazzy.json")
         shutil.move("/home/runner/.arduino15/package_drazzy.json", "/home/runner/.arduino15/package_drazzy.com_index.json")
     print("Installing", fqbn, end=" ")
-    if fqbn == "adafruit:avr":   # we have a platform dep
-        install_platform("arduino:avr", full_platform_name)
     if full_platform_name[2] is not None:
         manually_install_esp32_bsp(full_platform_name[2]) # build esp32 bsp from desired source and branch
-    for retry in range(0, 3):
-        print("arduino-cli core install "+fqbn+" --additional-urls "+BSP_URLS)
-        if os.system("arduino-cli core install "+fqbn+" --additional-urls "+BSP_URLS+" > /dev/null") == 0:
-            break
-        print("...retrying...", end=" ")
-        time.sleep(10) # wait 10 seconds then try again?
     else:
-        # tried 3 times to no avail
-        ColorPrint.print_fail("FAILED to install "+fqbn)
-        exit(-1)
+      if fqbn == "adafruit:avr":   # we have a platform dep
+          install_platform("arduino:avr", full_platform_name)
+
+      for retry in range(0, 3):
+          print("arduino-cli core install "+fqbn+" --additional-urls "+BSP_URLS)
+          if os.system("arduino-cli core install "+fqbn+" --additional-urls "+BSP_URLS+" > /dev/null") == 0:
+              break
+          print("...retrying...", end=" ")
+          time.sleep(10) # wait 10 seconds then try again?
+      else:
+          # tried 3 times to no avail
+          ColorPrint.print_fail("FAILED to install "+fqbn)
+          exit(-1)
     ColorPrint.print_pass(CHECK)
     # print installed core version
     print(os.popen('arduino-cli core list | grep {}'.format(fqbn)).read(), end='')
