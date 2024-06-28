@@ -33,7 +33,7 @@ ALL_PLATFORMS={
     "feather_esp32s3" : ["esp32:esp32:adafruit_feather_esp32s3_nopsram", "0xc47e5767", None],
     "feather_esp32s3_debug" : ["esp32:esp32:adafruit_feather_esp32s3_nopsram:DebugLevel=verbose:PartitionScheme=tinyuf2_noota", "0xc47e5767", None],
     "feather_esp32s3_4mbflash_2mbpsram" : ["espressif:esp32:adafruit_feather_esp32s3", "0xc47e5767", "espressif/3.0.0"],
-    "feather_esp32s3_4mbflash_2mbpsram_debug" : ["espressif:esp32:adafruit_feather_esp32s3:DebugLevel=verbose:PartitionScheme=tinyuf2_noota", "0xc47e5767", "espressif/3.0.0"],
+    "feather_esp32s3_4mbflash_2mbpsram_debug" : ["esp32:esp32:adafruit_feather_esp32s3:DebugLevel=verbose:PartitionScheme=tinyuf2_noota", "0xc47e5767", "espressif/3.0.0"],
     "feather_esp32s3_tft" : ["espressif:esp32:adafruit_feather_esp32s3_tft", "0xc47e5767", "espressif/3.0.0"],
     "feather_esp32s3_tft_debug" : ["espressif:esp32:adafruit_feather_esp32s3_tft:DebugLevel=verbose:PartitionScheme=tinyuf2_noota", "0xc47e5767", "espressif/3.0.0"],
     "feather_esp32s3_reverse_tft" : ["espressif:esp32:adafruit_feather_esp32s3_reversetft", "0xc47e5767", "espressif/3.0.0"],
