@@ -25,7 +25,7 @@ ALL_PLATFORMS={
     ## ESP32-S2
     "magtag" : ["espressif:esp32:adafruit_magtag29_esp32s2", "0xbfdd4eee", "espressif/master"],
     "funhouse" : ["espressif:esp32:adafruit_funhouse_esp32s2", "0xbfdd4eee", "espressif/master"],
-    "funhouse_noota" : ["espressif:esp32:adafruit_funhouse_esp32s2:PartitionScheme=tinyuf2_noota", "0xbfdd4eee", "espressif/master"],
+    "funhouse_noota" : ["esp32:esp32:adafruit_funhouse_esp32s2:PartitionScheme=tinyuf2_noota", "0xbfdd4eee", None],
     "metroesp32s2" : ["espressif:esp32:adafruit_metro_esp32s2", "0xbfdd4eee", "espressif/master"],
     "qtpy_esp32s2" : ["espressif:esp32:adafruit_qtpy_esp32s2", "0xbfdd4eee", "espressif/master"],
     "feather_esp32s2" : ["espressif:esp32:adafruit_feather_esp32s2", "0xbfdd4eee", "espressif/master"],
