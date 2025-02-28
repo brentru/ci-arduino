@@ -220,7 +220,8 @@ def install_library_deps():
     if our_name:
         run_or_die("arduino-cli lib uninstall \""+our_name+"\"", "Could not uninstall")
 
-    run_or_die("arduino-cli lib list", "Could not list libraries")
+    result = subprocess.run(["arduino-cli", "lib", "list"], text=True, capture_output=True)
+    print(result.stdout)
     print("Libraries installed: ", glob.glob(os.environ['HOME']+'/Arduino/libraries/*'))
 
     # link our library folder to the arduino libraries folder
